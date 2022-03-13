@@ -19,6 +19,7 @@ provider:
   runtime: nodejs14.x
   memorySize: 128
   timeout: 10
+  region: eu-west-1
   logRetentionInDays: 90
   lambdaHashingVersion: 20201221 # https://www.serverless.com/framework/docs/deprecations/#LAMBDA_HASHING_VERSION_V2
   logs:
