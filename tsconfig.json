@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    "outDir": ".build",
+    "moduleResolution": "node",
+    "lib": ["es2015"],
+    "rootDir": "./src",
+    "baseUrl": "./"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

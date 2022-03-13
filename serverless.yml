@@ -1,0 +1,32 @@
+service: facharbeit-serverless
+
+functions:
+  app:
+    handler: src/handler.handler
+    # reservedConcurrency: 100
+    events:
+      - httpApi:
+          path: '/{proxy+}'
+          method: '*'
+
+custom:
+  serverless-offline:
+    httpPort: 4000
+    noPrependStageInUrl: true
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  memorySize: 128
+  timeout: 10
+  logRetentionInDays: 90
+  lambdaHashingVersion: 20201221 # https://www.serverless.com/framework/docs/deprecations/#LAMBDA_HASHING_VERSION_V2
+  logs:
+    httpApi: true
+  httpApi:
+    # metrics: true # Enable if you need
+    cors: true
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
